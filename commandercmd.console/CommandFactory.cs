@@ -41,7 +41,7 @@ namespace commandercmd.console
 
                     break;
                 case "color":
-                    command = new setColorCommand(commandName, parameter);
+                    command = new colorCommand(commandName, parameter);
 
                     break;
                 case "ren":
