@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console.Commands
 {
-    public class cls : ShellCommand
+    public class clsCommand : ShellCommand
     {
-        public cls(string command, string parameter) : base(command, parameter)
+        public clsCommand(string command, string parameter) : base(command, parameter)
         {
         }
 
