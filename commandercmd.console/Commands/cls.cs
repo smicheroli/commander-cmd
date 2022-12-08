@@ -14,6 +14,7 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
+            //delete all previous actions in the terminal - clear terminal
             Console.Clear();
         }
     }
