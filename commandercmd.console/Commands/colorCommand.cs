@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console.Commands
 {
-    public class setColorCommand : ShellCommand
+    public class colorCommand : ShellCommand
     {
-        public setColorCommand(string command, string parameter) : base(command, parameter)
+        public colorCommand(string command, string parameter) : base(command, parameter)
         {
         }
         public override void Execute()
