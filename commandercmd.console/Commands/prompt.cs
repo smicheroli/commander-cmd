@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console.Commands.prompt
 {
-    public class prompt: ShellCommand
+    public class prompt : ShellCommand
     {
         public prompt(string command, string parameter) : base(command, parameter)
         {
- 
+
             {
-            
+
             }
-        
+
         }
 
         public override void Execute()
@@ -25,7 +25,7 @@ namespace commandercmd.console.Commands.prompt
             String currentDirectory = Program.shell.currentDirectory;
             Console.WriteLine("The current directory is" + currentDirectory);
             Console.ReadLine();
-            
+
         }
     }
 }
