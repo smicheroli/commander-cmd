@@ -23,6 +23,18 @@ namespace commandercmd.console
                     command = new cls(commandName, parameter);
 
                     break;
+                case "color":
+                    command = new setColorCommand(commandName, parameter);
+
+                    break;
+                case "ren":
+                    command = new renCommand(commandName, parameter);
+
+                    break;
+                case "ver":
+                    command = new CommandVersion(commandName, parameter);
+
+                    break;
             }
 
 
