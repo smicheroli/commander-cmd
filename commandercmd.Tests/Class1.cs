@@ -9,6 +9,7 @@ namespace commandercmd.Tests
 {
     namespace StringTester
     {
+
         [TestClass]
         public class setColorTests
         {
