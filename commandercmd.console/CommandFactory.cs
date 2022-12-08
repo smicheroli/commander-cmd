@@ -1,4 +1,5 @@
-﻿using System;
+﻿using commandercmd.console.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,19 @@ namespace commandercmd.console
 {
     public class CommandFactory
     {
-        public void GetCommand(string commandName)
+        public ShellCommand GetCommand(string commandName, String parameter)
         {
+            ShellCommand command = null;
+            switch(commandName)
+            {
+                case "exit":
+                    command = new exitCommand(commandName, parameter);
 
+                    break;
+            }
+
+
+            return command;
         }
     }
 }

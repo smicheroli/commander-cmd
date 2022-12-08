@@ -9,6 +9,7 @@ namespace commandercmd.console
     public class Invoker
     {
         public Parser parser { get; set; }
+        private CommandFactory commandFactory = new CommandFactory();
 
         public Invoker()
         {
@@ -18,6 +19,11 @@ namespace commandercmd.console
         public void ExecuteCommand(string input)
         {
             String command = parser.GetCommand(input);
+            String parameter = parser.GetParameter(input);
+
+            ShellCommand executableCommand = commandFactory.GetCommand(command,parameter);
+
+            executableCommand.Execute();
         }
     }
 }
