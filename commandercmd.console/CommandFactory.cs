@@ -20,11 +20,11 @@ namespace commandercmd.console
                     break;
 
                 case "cls":
-                    command = new cls(commandName, parameter);
+                    command = new clsCommand(commandName, parameter);
 
                     break;
                 case "color":
-                    command = new setColorCommand(commandName, parameter);
+                    command = new colorCommand(commandName, parameter);
 
                     break;
                 case "ren":
