@@ -14,6 +14,7 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
+            
             Console.WriteLine("Hoi Stephhhhhhh");
             Console.WriteLine(this.Parameter);
             
