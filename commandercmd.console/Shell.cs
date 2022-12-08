@@ -36,6 +36,7 @@ namespace commandercmd.console
         }
         private String ReadInput()
         {
+            Console.Write(currentDirectory + ">");
             return Console.ReadLine();
         }
         private bool ValidateInput(String input)
