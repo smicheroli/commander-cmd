@@ -2,6 +2,9 @@
 {
     public class Shell
     {
+
+        private bool exited = false;
+
         public Invoker invoker { get; set; }
 
         public Shell()
@@ -11,11 +14,14 @@
 
         public void Run()
         {
+            while (!exited)
+            {
 
+            }
         }
         public void Exit()
         {
-
+            exited = true;
         }
         private void ReadInput()
         {
