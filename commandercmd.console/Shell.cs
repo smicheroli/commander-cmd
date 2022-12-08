@@ -1,4 +1,6 @@
-﻿namespace commandercmd.console
+﻿using System.Xml.Serialization;
+
+namespace commandercmd.console
 {
     public class Shell
     {
@@ -11,14 +13,20 @@
 
         public Shell()
         {
-            invoker = new Invoker();s
-            currentDirectory = "C:\";
+            invoker = new Invoker();
+            currentDirectory = Environment.CurrentDirectory;
         }
 
         public void Run()
         {
             while (!exited)
             {
+                String input = ReadInput();
+
+                if(ValidateInput(input))
+                {
+                    Process(input);
+                }
 
             }
         }
@@ -26,21 +34,18 @@
         {
             exited = true;
         }
-        private void ReadInput()
+        private String ReadInput()
         {
-
+            return Console.ReadLine();
         }
-        private void ValidateInput()
+        private bool ValidateInput(String input)
         {
-
+            return false;
         }
-        private void Process()
-        {
 
-        }
-        private void WriteOutput()
+        private void Process(String input)
         {
-
+            invoker.ExecuteCommand(input);
         }
     }
 }
