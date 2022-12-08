@@ -49,7 +49,7 @@ namespace commandercmd.console
 
                     break;
                 case "ver":
-                    command = new CommandVersion(commandName, parameter);
+                    command = new versionCommand(commandName, parameter);
 
                     break;
             }
