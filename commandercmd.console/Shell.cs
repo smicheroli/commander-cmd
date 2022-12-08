@@ -63,6 +63,9 @@ namespace commandercmd.console
                     case "test":
 
                         return true;
+                    case "prompt":
+
+                        return true;
                 }
             }
             return false;
