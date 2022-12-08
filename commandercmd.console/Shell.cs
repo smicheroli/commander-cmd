@@ -51,7 +51,18 @@ namespace commandercmd.console
                     case "cls":
 
                         return true;
+                    case "ver":
 
+                        return true;
+                    case "ren":
+
+                        return true;
+                    case "color":
+
+                        return true;
+                    case "test":
+
+                        return true;
                 }
             }
             return false;
