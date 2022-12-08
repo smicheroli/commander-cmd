@@ -40,6 +40,16 @@ namespace commandercmd.console
         }
         private bool ValidateInput(String input)
         {
+            String command = input.Split(' ').First();
+            if(command != null)
+            {
+                switch (command)
+                {
+                    case "exit"
+
+                        return true;
+                }
+            }
             return false;
         }
 
