@@ -15,8 +15,8 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-            
-           
+
+
             Console.WriteLine(this.Parameter);
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
@@ -25,21 +25,23 @@ namespace commandercmd.console.Commands
             {
                 Console.WriteLine(" Ihr Pfad gibt es bereits");
             }
-            
-            else {
-                File.Move(endpath[0], endpath[1]);  
+
+            else
+            {
+                File.Move(endpath[0], endpath[1]);
                 Console.Write("Ihre Datei wurde verschoben");
-            
+
             }
-            
-
-            
-
-            
-            
 
 
-            
+
+
+
+
+
+
+
+        }
         
     }
 }
