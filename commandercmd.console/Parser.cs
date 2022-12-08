@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console
 {
-    internal class Parser
+    public class Parser
     {
+
+        public void GetCommand()
+        {
+
+        }
+
+        public void GetParameter()
+        {
+
+        }
+
     }
 }

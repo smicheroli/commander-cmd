@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console
 {
-    internal class CommandFactory
+    public class CommandFactory
     {
+        public void GetCommand(string commandName)
+        {
+
+        }
     }
 }
