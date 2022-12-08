@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console
 {
-    internal class Invoker
+    public class Invoker
     {
+        public Parser parser { get; set; }
+
+        public Invoker()
+        {
+            this.parser =  new Parser();
+        }
     }
 }
