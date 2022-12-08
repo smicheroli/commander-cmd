@@ -14,7 +14,7 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-            Console.WriteLine(this.Parameter);
+            Program.shell.Exit(); 
         }
     }
 }
