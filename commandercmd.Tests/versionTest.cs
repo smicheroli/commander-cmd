@@ -10,7 +10,7 @@ namespace commandercmd.Tests
         public void GiveBasicCommand_GetCommandOnlyBackAsString()
         {
             // Arrange
-            var command = new versionCommand("version", "");
+            var command = new versionCommand("ver", "");
 
             // Capture the output written to the Console
             var writer = new StringWriter();
