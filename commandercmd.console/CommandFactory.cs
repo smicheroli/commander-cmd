@@ -18,6 +18,11 @@ namespace commandercmd.console
                     command = new exitCommand(commandName, parameter);
 
                     break;
+
+                case "cls":
+                    command = new cls(commandName, parameter);
+
+                    break;
             }
 
 

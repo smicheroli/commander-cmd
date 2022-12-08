@@ -11,13 +11,13 @@ namespace commandercmd.console
 
         public String GetCommand(String input)
         {
-            String command = input.Split(' ').First();
+            String command = input.Trim().Split(' ').First();
             return command;
         }
 
         public String GetParameter(String input)
         {
-            int commandEnd = input.IndexOf(' ');
+            int commandEnd = input.Trim().Split(' ')[0].Length;
 
             String parameters = input.Substring(commandEnd).Trim();
 
