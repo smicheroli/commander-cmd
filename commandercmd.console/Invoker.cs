@@ -14,5 +14,10 @@ namespace commandercmd.console
         {
             this.parser =  new Parser();
         }
+
+        public void ExecuteCommand(string input)
+        {
+            String command = parser.GetCommand(input);
+        }
     }
 }
