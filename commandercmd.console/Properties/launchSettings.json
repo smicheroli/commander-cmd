@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "commandercmd.console": {
+      "commandName": "Project"
+    },
+    "Profil \"1\"": {
+      "commandName": "Executable"
+    }
+  }
+}
