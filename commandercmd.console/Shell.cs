@@ -45,7 +45,7 @@ namespace commandercmd.console
             {
                 switch (command)
                 {
-                    case "exit"
+                    case "exit":
 
                         return true;
                 }
