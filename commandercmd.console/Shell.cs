@@ -7,9 +7,12 @@
 
         public Invoker invoker { get; set; }
 
+        public String currentDirectory { get; set; }
+
         public Shell()
         {
-            invoker = new Invoker();
+            invoker = new Invoker();s
+            currentDirectory = "C:\";
         }
 
         public void Run()
