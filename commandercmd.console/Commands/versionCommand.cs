@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace commandercmd.console.Commands
 {
+
     public class versionCommand : ShellCommand
     {
         public versionCommand(string command, string parameter) : base(command, parameter)
