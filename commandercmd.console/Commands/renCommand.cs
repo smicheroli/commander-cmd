@@ -10,6 +10,7 @@ namespace commandercmd.console.Commands
     {
         public renCommand(string command, string parameter) : base(command, parameter)
         {
+           
         }
 
         public override void Execute()
@@ -17,7 +18,20 @@ namespace commandercmd.console.Commands
             
             Console.WriteLine("Hoi Stephhhhhhh");
             Console.WriteLine(this.Parameter);
+            String startpath = this.Parameter;
+            String[] endpath = startpath.Split(' ');
+
+            File.Move(endpath[0], endpath[1]);
+
+            //Console.WriteLine(endpath[0], endpath[1]);
+
+            //if(this.Parameter!= null)
+            //{
+             //   Program.shell.Exit();
+            //}
             
+
+
             
         }
     }
