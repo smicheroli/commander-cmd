@@ -22,7 +22,7 @@ namespace commandercmd.console.Commands.prompt
 
         {
 
-            String currentDirectory = Environment.CurrentDirectory;
+            String currentDirectory = Program.shell.currentDirectory;
             Console.WriteLine("The current directory is" + currentDirectory);
             Console.ReadLine();
             
