@@ -48,6 +48,10 @@ namespace commandercmd.console
                     case "exit":
 
                         return true;
+                    case "cls":
+
+                        return true;
+
                 }
             }
             return false;
