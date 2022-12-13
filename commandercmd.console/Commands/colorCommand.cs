@@ -22,10 +22,10 @@ namespace commandercmd.console.Commands
             string[] splitcolors = setcolor.Split(" ");
 
             //Converting the Words to Uppercase
-            string[] systemcolors = splitcolors[0].ToUpper();
-            systemcolors[1] = splitcolors[1].ToUpper();
+            string foregroundcolors = splitcolors[0].ToUpper();
+            string backgroundcolors = splitcolors[1].ToUpper();
 
-            switch (systemcolors[0])
+            switch (foregroundcolors)
             {
                 case "BLAU":
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -33,13 +33,15 @@ namespace commandercmd.console.Commands
                 case "GELB":
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     break;
-                case "GRÜN" || "GRUEN":
+                case "GRÜN":
+                case "GRUEN":
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     break;
                 case "ROT":
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     break;
-                case "TÜRKIS" || "TUERKIS":
+                case "TÜRKIS":
+                case "TUERKIS":
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
                     break;
                 case "LILA":
@@ -54,10 +56,12 @@ namespace commandercmd.console.Commands
                 case "HELLBLAU":
                     Console.ForegroundColor = ConsoleColor.Blue;
                     break;
-                case "HELLGRÜN" || "HELLGRUEN":
+                case "HELLGRÜN":
+                case "HELLGRUEN":
                     Console.ForegroundColor = ConsoleColor.Green;
                     break;
-                case "HELLTÜRKIS" || "HELLTUERKIS":
+                case "HELLTÜRKIS":
+                case "HELLTUERKIS":
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     break;
                 case "HELLROT":
@@ -75,10 +79,12 @@ namespace commandercmd.console.Commands
                 case "SCHWARZ":
                     Console.ForegroundColor = ConsoleColor.Black;
                     break;
+                default:
+                    Console.WriteLine("Invalid color");
+                    break;
             }
-            switch
 
-            switch (systemcolors[1])
+            switch (backgroundcolors)
             {
                 case "BLAU":
                     Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -86,13 +92,15 @@ namespace commandercmd.console.Commands
                 case "GELB":
                     Console.BackgroundColor = ConsoleColor.DarkYellow;
                     break;
-                case "GRÜN" || "GRUEN":
+                case "GRÜN":
+                case "GRUEN":
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     break;
                 case "ROT":
                     Console.BackgroundColor = ConsoleColor.DarkRed;
                     break;
-                case "TÜRKIS" || "TUERKIS":
+                case "TÜRKIS":
+                case "TUERKIS":
                     Console.BackgroundColor = ConsoleColor.DarkCyan;
                     break;
                 case "LILA":
@@ -107,10 +115,12 @@ namespace commandercmd.console.Commands
                 case "HELLBLAU":
                     Console.BackgroundColor = ConsoleColor.Blue;
                     break;
-                case "HELLGRÜN" || "HELLGRUEN":
+                case "HELLGRÜN":
+                case "HELLGRUEN":
                     Console.BackgroundColor = ConsoleColor.Green;
                     break;
-                case "HELLTÜRKIS" || "HELLTUERKIS":
+                case "HELLTÜRKIS":
+                case "HELLTUERKIS":
                     Console.BackgroundColor = ConsoleColor.Cyan;
                     break;
                 case "HELLROT":
@@ -129,10 +139,8 @@ namespace commandercmd.console.Commands
                     Console.BackgroundColor = ConsoleColor.Black;
                     break;
             }
-            switch
-
-            Console.WriteLine("The text color has been changed to " + systemcolors[0] + "and the background color has been changed to" + systemcolors[1] + ".");
-            Array.Clear(systemcolors);
+            Console.WriteLine("The text color has been changed to " + foregroundcolors + "and the background color has been changed to" + backgroundcolors);
+            Array.Clear(splitcolors);
         }
     }
 }
