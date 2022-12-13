@@ -5,6 +5,10 @@
     },
     "Profil \"1\"": {
       "commandName": "Executable"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
     }
   }
 }
