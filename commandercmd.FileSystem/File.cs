@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace commandercmd.console.FileSystem
+namespace commandercmd.FileSystem
 {
     public class File : FileSystemItem
     {
-        
+
     }
 }
