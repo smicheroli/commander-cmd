@@ -143,7 +143,7 @@ namespace commandercmd.console.Commands
                     Console.BackgroundColor = ConsoleColor.Black;
                     break;
             }
-            Console.WriteLine("The text color has been changed to " + foregroundcolors + "and the background color has been changed to" + backgroundcolors);
+            Console.WriteLine("The text color has been changed to " + foregroundcolors + " and the background color has been changed to " + backgroundcolors);
             Array.Clear(splitcolors);
         }
     }
