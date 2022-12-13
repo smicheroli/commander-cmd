@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\commandercmd.console\commandercmd.console.csproj" />
+    <ProjectReference Include="..\commandercmd.FileSystem\commandercmd.FileSystem.csproj" />
   </ItemGroup>
 
 </Project>

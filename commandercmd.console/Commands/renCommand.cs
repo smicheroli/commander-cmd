@@ -27,7 +27,7 @@ namespace commandercmd.console.Commands
             else
             {
                 File.Move(endpath[0], endpath[1]);
-                Console.Write("Ihre Datei wurde verschoben");
+                Console.WriteLine("Ihre Datei wurde verschoben");
 
             }
 
