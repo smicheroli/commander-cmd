@@ -28,7 +28,7 @@ namespace commandercmd.console.Commands
             {
                 backgroundcolors = splitcolors[1].ToUpper();
             }
-
+            //switch der Textfarbe
             switch (foregroundcolors)
             {
                 case "BLAU":
