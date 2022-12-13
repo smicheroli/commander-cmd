@@ -40,6 +40,14 @@ namespace commandercmd.console
                     command = new prompt(commandName, parameter);
 
                     break;
+                case "cd":
+                    command = new cdCommand(commandName, parameter);
+
+                    break;
+                case "cd..":
+                    command = new cdCommand(commandName, "..");
+
+                    break;
             }
 
 
