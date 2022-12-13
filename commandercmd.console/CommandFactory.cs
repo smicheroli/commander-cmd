@@ -40,16 +40,12 @@ namespace commandercmd.console
                     command = new prompt(commandName, parameter);
 
                     break;
-                case "color":
-                    command = new colorCommand(commandName, parameter);
+                case "cd":
+                    command = new cdCommand(commandName, parameter);
 
                     break;
-                case "ren":
-                    command = new renCommand(commandName, parameter);
-
-                    break;
-                case "ver":
-                    command = new versionCommand(commandName, parameter);
+                case "cd..":
+                    command = new cdCommand(commandName, "..");
 
                     break;
             }

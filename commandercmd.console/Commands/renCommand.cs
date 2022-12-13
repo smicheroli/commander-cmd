@@ -15,8 +15,6 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-
-
             Console.WriteLine(this.Parameter);
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
@@ -32,14 +30,6 @@ namespace commandercmd.console.Commands
                 Console.Write("Ihre Datei wurde verschoben");
 
             }
-
-
-
-
-
-
-
-
 
         }
         
