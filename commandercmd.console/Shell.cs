@@ -20,7 +20,7 @@ namespace commandercmd.console
         {
             while (!exited)
             {
-                String input = ReadInput();
+                String input = ReadInput().Trim();
 
                 if(ValidateInput(input))
                 {
