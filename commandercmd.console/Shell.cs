@@ -9,12 +9,11 @@ namespace commandercmd.console
 
         public Invoker invoker { get; set; }
 
-        public String currentDirectory { get; set; }
+        public String currentDirectory { get { return Environment.CurrentDirectory; } }
 
         public Shell()
         {
             invoker = new Invoker();
-            currentDirectory = Environment.CurrentDirectory;
         }
 
         public void Run()
@@ -65,6 +64,12 @@ namespace commandercmd.console
 
                         return true;
                     case "prompt":
+
+                        return true;
+                    case "cd":
+
+                        return true;
+                    case "cd..":
 
                         return true;
                 }

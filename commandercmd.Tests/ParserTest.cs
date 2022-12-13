@@ -15,6 +15,8 @@ namespace commandercmd.Tests
 
             Assert.AreEqual(expected: "test", command);
 
+            
+
         }
     }
 }
