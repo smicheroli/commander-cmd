@@ -10,6 +10,8 @@ namespace commandercmd.FileSystem
     {
         public List<FileSystemItem> Content { get; set; }
 
-        public Directory() { }
+        public Directory(String name) { 
+            Name = name;
+        }
     }
 }

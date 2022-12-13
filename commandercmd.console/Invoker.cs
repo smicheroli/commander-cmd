@@ -10,13 +10,16 @@ namespace commandercmd.console
     public class Invoker
     {
 
-        public List<Drive> Drives { get; set; }
+        public IList<Drive> Drives { get; set; }
         public Parser parser { get; set; }
         private CommandFactory commandFactory = new CommandFactory();
+        private PersistenceService persistence = new PersistenceService("fileSystem.json");
 
         public Invoker()
         {
             this.parser =  new Parser();
+
+            Drives = persistence.Load();
         }
 
         public void ExecuteCommand(string input)
@@ -27,6 +30,8 @@ namespace commandercmd.console
             ShellCommand executableCommand = commandFactory.GetCommand(command,parameter);
 
             executableCommand.Execute();
+
+            persistence.Save(Drives);
         }
     }
 }

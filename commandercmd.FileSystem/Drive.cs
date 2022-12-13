@@ -11,8 +11,8 @@ namespace commandercmd.FileSystem
         public String DriveLetter { get; set; }
         public List<FileSystemItem> Content { get; set; }
 
-        public Drive() { 
-            
+        public Drive(String driveLetter) {
+            DriveLetter = driveLetter;
         }
 
     }

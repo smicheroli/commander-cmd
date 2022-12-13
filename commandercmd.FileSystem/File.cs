@@ -8,6 +8,9 @@ namespace commandercmd.FileSystem
 {
     public class File : FileSystemItem
     {
-        public File() { }
+        public String Content { get; set; }
+        public File(String name) { 
+            Name = name.Trim();
+        }
     }
 }
