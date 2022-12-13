@@ -1,4 +1,5 @@
-﻿using System;
+﻿using commandercmd.FileSystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace commandercmd.console
 {
     public class Invoker
     {
+
+        public List<Drive> Drives { get; set; }
         public Parser parser { get; set; }
         private CommandFactory commandFactory = new CommandFactory();
 

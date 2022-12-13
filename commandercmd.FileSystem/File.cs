@@ -8,6 +8,6 @@ namespace commandercmd.FileSystem
 {
     public class File : FileSystemItem
     {
-
+        public File() { }
     }
 }

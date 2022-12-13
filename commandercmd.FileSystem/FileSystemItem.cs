@@ -8,5 +8,10 @@ namespace commandercmd.FileSystem
 {
     public class FileSystemItem
     {
+        public String Name { get; set; }
+        public FileSystemItem()
+        {
+
+        }
     }
 }

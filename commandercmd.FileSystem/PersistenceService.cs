@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace commandercmd.FileSystem
 {
-    public class Directory : FileSystemItem
+    internal class PersistenceService
     {
-        public List<FileSystemItem> Content { get; set; }
-
-        public Directory() { }
     }
 }

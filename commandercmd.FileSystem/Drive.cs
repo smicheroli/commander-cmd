@@ -8,7 +8,12 @@ namespace commandercmd.FileSystem
 {
     public class Drive
     {
+        public String DriveLetter { get; set; }
         public List<FileSystemItem> Content { get; set; }
+
+        public Drive() { 
+            
+        }
 
     }
 }
