@@ -21,9 +21,13 @@ namespace commandercmd.console.Commands
             //Split the color into 2 seperate words
             string[] splitcolors = setcolor.Split(" ");
 
+            string backgroundcolors = "SCHWARZ";
             //Converting the Words to Uppercase
             string foregroundcolors = splitcolors[0].ToUpper();
-            string backgroundcolors = splitcolors[1].ToUpper();
+            if (splitcolors.Length > 1)
+            {
+                backgroundcolors = splitcolors[1].ToUpper();
+            }
 
             switch (foregroundcolors)
             {
