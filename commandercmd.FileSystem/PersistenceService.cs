@@ -24,11 +24,15 @@ namespace commandercmd.FileSystem
         }
 
         public IList<Drive> Load() {
-
-            IList<Drive> files = JsonConvert.DeserializeObject<List<Drive>>(FilePath, JsonSerializerSettings);
+            IList<Drive> files = new List<Drive>();
+            if (System.IO.File.Exists(FilePath))
+            {
+                files = JsonConvert.DeserializeObject<List<Drive>>(FilePath, JsonSerializerSettings);
+            }
             if(files == null)
             {
                 files= new List<Drive>();
+                files.Add(new Drive("C"));
             }
             return files;
         }
