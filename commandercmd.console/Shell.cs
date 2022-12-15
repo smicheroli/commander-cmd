@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using commandercmd.FileSystem;
+using System.Xml.Serialization;
 
 namespace commandercmd.console
 {
@@ -11,8 +12,13 @@ namespace commandercmd.console
 
         public String currentDirectory { get { return Environment.CurrentDirectory; } }
 
+        private PersistenceService persistence;
+        public IList<Drive> Drives { get; set; }
+
         public Shell()
         {
+            persistence = new PersistenceService(@$"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\filesystem.json");
+            Drives = persistence.Load();
             invoker = new Invoker();
         }
 
@@ -80,6 +86,16 @@ namespace commandercmd.console
         private void Process(String input)
         {
             invoker.ExecuteCommand(input);
+            persistence.Save(Drives);
+        }
+
+        public Drive GetDrive(String path)
+        {
+            if (path.Length >= 3)
+            {
+                return Drives.Where(x => x.DriveLetter == path[0]).First();
+            }
+            return null;
         }
     }
 }

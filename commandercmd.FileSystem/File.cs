@@ -12,5 +12,11 @@ namespace commandercmd.FileSystem
         public File(String name) { 
             Name = name.Trim();
         }
+
+        public File(String name, String content)
+        {
+            Name = name.Trim();
+            Content = content;
+        }
     }
 }
