@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -92,10 +93,27 @@ namespace commandercmd.FileSystem
         }
         public void DeleteItem(String path)
         {
-            
+            if (ExistsDirectory(path) || ExistsFile(path))
+            {
+                String[] spliitedArray = path.Split('\\');
+                String existingPath = "";
+                for (int i = 0; i < spliitedArray.Length - 1; i++)
+                {
+                    existingPath += $"{spliitedArray[i]}\\";
+                }
+
+                if (ExistsDirectory(existingPath))
+                {
+                    Directory directory = GetDirectory(existingPath);
+
+                    directory.Content.Remove(directory.Content.Where(x => x.Name == spliitedArray[spliitedArray.Length - 1]).First());
+                }
+
+
+            }
         }
 
-        public void CreateItem(String path, String content = "")
+        public void CreateFile(String path, String content = "")
         {
             if(!ExistsDirectory(path) && !ExistsFile(path))
             {
@@ -106,8 +124,34 @@ namespace commandercmd.FileSystem
                     existingPath += $"{spliitedArray[i]}\\";
                 }
 
+                if (ExistsDirectory(existingPath))
+                {
+                    Directory directory = GetDirectory(existingPath);
+                    directory.Content.Add(new File(spliitedArray[spliitedArray.Length - 1], content));
+                }
 
                 
+            }
+        }
+
+        public void Createirectory(String path)
+        {
+            if (!ExistsDirectory(path) && !ExistsFile(path))
+            {
+                String[] spliitedArray = path.Split('\\');
+                String existingPath = "";
+                for (int i = 0; i < spliitedArray.Length - 1; i++)
+                {
+                    existingPath += $"{spliitedArray[i]}\\";
+                }
+
+                if (ExistsDirectory(existingPath))
+                {
+                    Directory directory = GetDirectory(existingPath);
+                    directory.Content.Add(new Directory(spliitedArray[spliitedArray.Length - 1]);
+                }
+
+
             }
         }
 
