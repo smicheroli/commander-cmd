@@ -90,12 +90,50 @@ namespace commandercmd.FileSystem
         {
 
         }
-        public void DeleteItem(String oldPath, String newPath)
+        public void DeleteItem(String path)
         {
-
+            
         }
 
+        public void CreateItem(String path, String content = "")
+        {
+            if(!ExistsDirectory(path) && !ExistsFile(path))
+            {
+                String[] spliitedArray = path.Split('\\');
+                String existingPath = ""; 
+                for (int i = 0; i < spliitedArray.Length - 2; i++)
+                {
+                    existingPath += $"{spliitedArray[i]}\\";
+                }
 
+                Directory directory = GetDirectory(path);
+            }
+        }
+
+        public bool ExistsFile(String path)
+        {
+            try
+            {
+                GetFile(path);
+                return true;
+            }catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ExistsDirectory(String path)
+        {
+            try
+            {
+                GetDirectory(path);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
     }
 }
