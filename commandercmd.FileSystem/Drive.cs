@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -79,17 +80,88 @@ namespace commandercmd.FileSystem
                     }
                 }
             }
-
             throw new DirectoryNotFoundException();
         }
 
         public void MoveItem(String oldPath, String newPath)
         {
+            if (ExistsFile(oldPath) || ExistsDirectory(oldPath))
+            {
 
+                String[] spliitedArrayOld = oldPath.Split('\\');
+                String existingOldPath = "";
+                for (int i = 0; i < spliitedArrayOld.Length - 1; i++)
+                {
+                    existingOldPath += $"{spliitedArrayOld[i]}\\";
+                }
+
+
+                String[] spliitedArrayNew = newPath.Split('\\');
+                String existingNewPath = "";
+                for (int i = 0; i < spliitedArrayNew.Length - 1; i++)
+                {
+                    existingNewPath += $"{spliitedArrayNew[i]}\\";
+                }
+
+                FileSystemItem item;
+                if (ExistsFile(oldPath)) {
+                    item = GetFile(oldPath);
+                } else
+                {
+                    item = GetDirectory(oldPath);
+                }
+
+                Directory oldDirectory = GetDirectory(existingOldPath);
+                Directory newDirectory = GetDirectory(existingNewPath);
+
+                oldDirectory.Content.Remove(item);
+                newDirectory.Content.Add(item);
+
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
         public void CopyItem(String oldPath, String newPath)
         {
+            if (ExistsFile(oldPath) || ExistsDirectory(oldPath))
+            {
 
+                String[] spliitedArrayOld = oldPath.Split('\\');
+                String existingOldPath = "";
+                for (int i = 0; i < spliitedArrayOld.Length - 1; i++)
+                {
+                    existingOldPath += $"{spliitedArrayOld[i]}\\";
+                }
+
+
+                String[] spliitedArrayNew = newPath.Split('\\');
+                String existingNewPath = "";
+                for (int i = 0; i < spliitedArrayNew.Length - 1; i++)
+                {
+                    existingNewPath += $"{spliitedArrayNew[i]}\\";
+                }
+
+                FileSystemItem item;
+                if (ExistsFile(oldPath))
+                {
+                    item = GetFile(oldPath);
+                }
+                else
+                {
+                    item = GetDirectory(oldPath);
+                }
+
+                Directory newDirectory = GetDirectory(existingNewPath);
+
+                newDirectory.Content.Add(item);
+
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
         public void DeleteItem(String path)
         {
@@ -134,7 +206,7 @@ namespace commandercmd.FileSystem
             }
         }
 
-        public void Createirectory(String path)
+        public void CreateDirectory(String path)
         {
             if (!ExistsDirectory(path) && !ExistsFile(path))
             {
