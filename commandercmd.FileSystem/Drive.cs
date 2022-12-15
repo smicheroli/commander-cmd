@@ -101,12 +101,13 @@ namespace commandercmd.FileSystem
             {
                 String[] spliitedArray = path.Split('\\');
                 String existingPath = ""; 
-                for (int i = 0; i < spliitedArray.Length - 2; i++)
+                for (int i = 0; i < spliitedArray.Length - 1; i++)
                 {
                     existingPath += $"{spliitedArray[i]}\\";
                 }
 
-                Directory directory = GetDirectory(path);
+
+                
             }
         }
 
