@@ -220,7 +220,7 @@ namespace commandercmd.FileSystem
                 if (ExistsDirectory(existingPath))
                 {
                     Directory directory = GetDirectory(existingPath);
-                    directory.Content.Add(new Directory(spliitedArray[spliitedArray.Length - 1]);
+                    directory.Content.Add(new Directory(spliitedArray[spliitedArray.Length - 1]));
                 }
 
 
