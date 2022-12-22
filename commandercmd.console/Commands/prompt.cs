@@ -9,23 +9,24 @@ namespace commandercmd.console.Commands.prompt
 {
     public class prompt : ShellCommand
     {
+
+        
+
+
         public prompt(string command, string parameter) : base(command, parameter)
         {
-
-            {
-
-            }
-
+  
         }
 
         public override void Execute()
-
         {
-
-            String currentDirectory = Program.shell.currentDirectory;
-            Console.WriteLine("The current directory is" + currentDirectory);
-            Console.ReadLine();
-
+            if (Parameter.Equals("")){
+                Program.shell.prompt = Program.shell.currentDirectory + ">";
+            }
+            else
+            {
+                Program.shell.prompt = Parameter;
+            }
         }
     }
 }

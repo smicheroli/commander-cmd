@@ -14,6 +14,7 @@ namespace commandercmd.console
 
         private PersistenceService persistence;
         public IList<Drive> Drives { get; set; }
+        public String prompt;
 
         public Shell()
         {
@@ -21,6 +22,7 @@ namespace commandercmd.console
             Drives = persistence.Load();
             persistence.Save(Drives);
             invoker = new Invoker();
+            prompt = currentDirectory + ">";
         }
 
         public void Run()
@@ -42,7 +44,8 @@ namespace commandercmd.console
         }
         private String ReadInput()
         {
-            Console.Write(currentDirectory + ">");
+            
+            Console.Write(prompt);
             return Console.ReadLine();
         }
         private bool ValidateInput(String input)
@@ -77,8 +80,9 @@ namespace commandercmd.console
 
                         return true;
                     case "cd..":
-
                         return true;
+                    case "":
+                        return false;
                     default:
                         Console.WriteLine("Der Befehl \"" + command + "\" ist entweder falsch geschrieben oder\r\nkonnte nicht gefunden werden.");
                         return false;
