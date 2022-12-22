@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +19,16 @@ namespace commandercmd.console.Commands
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
 
-            if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
+            if (File.Exists(endpath[0]) && !File.Exists(endpath[1]))
             {
-                Console.WriteLine(" Ihr Pfad gibt es bereits");
+                File.Move(endpath[0], endpath[1]);
+                Console.Write("Ihre Datei wurde umbennant");
             }
 
             else
             {
-                File.Move(endpath[0], endpath[1]);
-                Console.WriteLine("Ihre Datei wurde verschoben");
-
+                Console.WriteLine(" Ihr Datei gibt es bereits haha");
             }
-
         }
         
     }
