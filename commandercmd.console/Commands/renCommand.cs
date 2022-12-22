@@ -21,24 +21,15 @@ namespace commandercmd.console.Commands
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
 
-            if (!File.Exists(endpath[0])){
-
-                if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
-                {
-                    Console.WriteLine(" Ihr Datei gibt es bereits haha");
-                    Program.shell.Exit();
-                }
-
-                else
-                {
-                    File.Move(endpath[0], endpath[1]);
-                    Console.Write("Ihre Datei wurde umbennant");
-
-                }
+            if (File.Exists(endpath[0]) && !File.Exists(endpath[1]))
+            {
+                File.Move(endpath[0], endpath[1]);
+                Console.Write("Ihre Datei wurde umbennant");
             }
+
             else
             {
-                Program.shell.Exit();
+                Console.WriteLine(" Ihr Datei gibt es bereits haha");
             }
         }
 
