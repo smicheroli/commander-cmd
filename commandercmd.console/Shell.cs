@@ -79,6 +79,9 @@ namespace commandercmd.console
                     case "cd..":
 
                         return true;
+                    default:
+                        Console.WriteLine("Der Befehl \"" + command + "\" ist entweder falsch geschrieben oder\r\nkonnte nicht gefunden werden.");
+                        return false;
                 }
             }
             return false;
