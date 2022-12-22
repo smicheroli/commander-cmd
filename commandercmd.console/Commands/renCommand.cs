@@ -21,11 +21,12 @@ namespace commandercmd.console.Commands
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
 
-            if (!File.Exists(endpath[0]){
+            if (!File.Exists(endpath[0])){
 
                 if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
                 {
                     Console.WriteLine(" Ihr Datei gibt es bereits");
+                    Program.shell.Exit();
                 }
 
                 else
