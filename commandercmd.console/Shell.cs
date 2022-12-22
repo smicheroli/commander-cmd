@@ -10,7 +10,12 @@ namespace commandercmd.console
 
         public Invoker invoker { get; set; }
 
-        public String currentDirectory { get { return Environment.CurrentDirectory; } }
+        public String currentDirectory { get 
+            {
+                //return Environment.CurrentDirectory;
+                return Drives.First().DriveLetter + ":\\";
+            } 
+        }
 
         private PersistenceService persistence;
         public IList<Drive> Drives { get; set; }
