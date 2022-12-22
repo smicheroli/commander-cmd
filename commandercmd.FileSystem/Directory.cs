@@ -21,6 +21,8 @@ namespace commandercmd.FileSystem
             Content = content;
         }
 
+        public Directory() { }
+
         public File GetFile(String path)
         {
             if (path != null && path.Length > 0)

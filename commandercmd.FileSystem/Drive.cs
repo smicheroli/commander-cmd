@@ -21,6 +21,10 @@ namespace commandercmd.FileSystem
             DriveLetter = driveLetter;
             Content = content;
         }
+        public Drive()
+        {
+
+        }
 
 
         public File GetFile(String path)
