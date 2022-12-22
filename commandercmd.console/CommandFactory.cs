@@ -1,4 +1,5 @@
 ﻿using commandercmd.console.Commands;
+using commandercmd.console.Commands.prompt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,19 @@ namespace commandercmd.console
 
                     break;
                 case "ver":
-                    command = new CommandVersion(commandName, parameter);
+                    command = new versionCommand(commandName, parameter);
+
+                    break;
+                case "prompt":
+                    command = new prompt(commandName, parameter);
+
+                    break;
+                case "cd":
+                    command = new cdCommand(commandName, parameter);
+
+                    break;
+                case "cd..":
+                    command = new cdCommand(commandName, "..");
 
                     break;
             }

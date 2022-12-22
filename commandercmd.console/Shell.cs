@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using commandercmd.FileSystem;
+using System.Xml.Serialization;
 
 namespace commandercmd.console
 {
@@ -9,19 +10,24 @@ namespace commandercmd.console
 
         public Invoker invoker { get; set; }
 
-        public String currentDirectory { get; set; }
+        public String currentDirectory { get { return Environment.CurrentDirectory; } }
+
+        private PersistenceService persistence;
+        public IList<Drive> Drives { get; set; }
 
         public Shell()
         {
+            persistence = new PersistenceService(@$"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\filesystem.json");
+            Drives = persistence.Load();
+            persistence.Save(Drives);
             invoker = new Invoker();
-            currentDirectory = Environment.CurrentDirectory;
         }
 
         public void Run()
         {
             while (!exited)
             {
-                String input = ReadInput();
+                String input = ReadInput().Trim();
 
                 if(ValidateInput(input))
                 {
@@ -36,6 +42,7 @@ namespace commandercmd.console
         }
         private String ReadInput()
         {
+            Console.Write(currentDirectory + ">");
             return Console.ReadLine();
         }
         private bool ValidateInput(String input)
@@ -63,6 +70,18 @@ namespace commandercmd.console
                     case "test":
 
                         return true;
+                    case "prompt":
+
+                        return true;
+                    case "cd":
+
+                        return true;
+                    case "cd..":
+
+                        return true;
+                    default:
+                        Console.WriteLine("Der Befehl \"" + command + "\" ist entweder falsch geschrieben oder\r\nkonnte nicht gefunden werden.");
+                        return false;
                 }
             }
             return false;
@@ -71,6 +90,16 @@ namespace commandercmd.console
         private void Process(String input)
         {
             invoker.ExecuteCommand(input);
+            persistence.Save(Drives);
+        }
+
+        public Drive GetDrive(String path)
+        {
+            if (path.Length >= 3)
+            {
+                return Drives.Where(x => x.DriveLetter == path[0]).First();
+            }
+            return null;
         }
     }
 }

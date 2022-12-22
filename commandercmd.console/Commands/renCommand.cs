@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +15,6 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-
-
             Console.WriteLine(this.Parameter);
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
@@ -32,18 +30,6 @@ namespace commandercmd.console.Commands
                 Console.WriteLine(" Ihr Datei gibt es bereits haha");
             }
         }
-
-            
-
-            
-
-            
-
-            
-            
-
-
-            
         
     }
 }
