@@ -10,24 +10,21 @@ namespace commandercmd.FileSystem
     public class PersistenceService
     {
         public String FilePath { get; set; }
-        private JsonSerializerSettings jsonSerializerSettings;
 
         public PersistenceService(String filePath) {
             this.FilePath = filePath;
-            jsonSerializerSettings = new();
-            jsonSerializerSettings.TypeNameHandling= TypeNameHandling.All;
         }
 
         public void Save(IList<Drive> files)
         {
-            System.IO.File.WriteAllText(FilePath, JsonConvert.SerializeObject(files, jsonSerializerSettings));
+            System.IO.File.WriteAllText(FilePath, JsonConvert.SerializeObject(files));
         }
 
         public IList<Drive> Load() {
             IList<Drive> files = new List<Drive>();
             if (System.IO.File.Exists(FilePath))
             {
-                files = JsonConvert.DeserializeObject<List<Drive>>(FilePath, jsonSerializerSettings);
+                files = JsonConvert.DeserializeObject<List<Drive>>(FilePath);
             } else
             {
                 files= new List<Drive>();
