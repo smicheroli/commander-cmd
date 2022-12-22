@@ -16,14 +16,15 @@ namespace commandercmd.console.Commands
         public override void Execute()
         {
             string setcolor = this.Parameter;
-            Console.WriteLine(setcolor);
 
             //Split the color into 2 seperate words
             string[] splitcolors = setcolor.Split(" ");
 
+            //Setting standard values for the colors
             string backgroundcolors = "SCHWARZ";
+            string foregroundcolors = "WEISS";
             //Converting the Words to Uppercase
-            string foregroundcolors = splitcolors[0].ToUpper();
+            foregroundcolors = splitcolors[0].ToUpper();
             if (splitcolors.Length > 1)
             {
                 backgroundcolors = splitcolors[1].ToUpper();
@@ -143,8 +144,6 @@ namespace commandercmd.console.Commands
                     Console.BackgroundColor = ConsoleColor.Black;
                     break;
             }
-            Console.WriteLine("The text color has been changed to " + foregroundcolors + "and the background color has been changed to" + backgroundcolors);
-            Array.Clear(splitcolors);
         }
     }
 }
