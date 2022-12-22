@@ -7,34 +7,6 @@ namespace commandercmd.Tests
     [TestClass]
     public class setcolorTest
     {
-        [TestMethod]
-        public void TestValidBackgroundColor()
-        {
-            // Arrange
-            ConsoleColor expectedColor = ConsoleColor.DarkRed;
-            string setcolor = "Schwarz ROT";
-            colorCommand command = new colorCommand("color", setcolor);
-
-            // Act
-            command.Execute();
-
-            // Assert
-            Assert.AreEqual(expectedColor, Console.BackgroundColor);
-        }
-        [TestMethod]
-        public void TestValidForegroundColor()
-        {
-            // Arrange
-            ConsoleColor expectedColor = ConsoleColor.DarkGreen;
-            string setcolor = "GRUEN";
-            colorCommand command = new colorCommand("color", setcolor);
-
-            // Act
-            command.Execute();
-
-            // Assert
-            Assert.AreEqual(expectedColor, Console.ForegroundColor);
-        }
 
         [TestMethod]
         public void TestInvalidColor()
