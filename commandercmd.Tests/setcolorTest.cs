@@ -1,4 +1,5 @@
 ﻿using System;
+using commandercmd.console.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConsoleApplicationTests
@@ -6,6 +7,20 @@ namespace ConsoleApplicationTests
     [TestClass]
     public class setcolorTest
     {
+        [TestMethod]
+        public void TestValidBackgroundColor()
+        {
+            // Arrange
+            ConsoleColor expectedColor = ConsoleColor.DarkRed;
+            string setcolor = "ROT";
+            colorCommand command = new colorCommand("color", setcolor);
+
+            // Act
+            command.Execute();
+
+            // Assert
+            Assert.AreEqual(expectedColor, Console.ForegroundColor);
+        }
         [TestMethod]
         public void TestValidForegroundColor()
         {
@@ -19,21 +34,6 @@ namespace ConsoleApplicationTests
 
             // Assert
             Assert.AreEqual(expectedColor, Console.ForegroundColor);
-        }
-
-        [TestMethod]
-        public void TestValidBackgroundColor()
-        {
-            // Arrange
-            ConsoleColor expectedColor = ConsoleColor.Red;
-            string setcolor = "HELLROT";
-            colorCommand command = new colorCommand("color", setcolor);
-
-            // Act
-            command.Execute();
-
-            // Assert
-            Assert.AreEqual(expectedColor, Console.BackgroundColor);
         }
 
         [TestMethod]

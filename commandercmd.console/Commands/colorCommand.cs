@@ -25,7 +25,7 @@ namespace commandercmd.console.Commands
             string backgroundcolors = "SCHWARZ";
             string foregroundcolors = "WEISS";
             //Converting the Words to Uppercase
-            string foregroundcolors = splitcolors[0].ToUpper();
+            foregroundcolors = splitcolors[0].ToUpper();
             if (splitcolors.Length > 1)
             {
                 backgroundcolors = splitcolors[1].ToUpper();
