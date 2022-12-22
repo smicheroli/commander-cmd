@@ -15,22 +15,34 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-            
-           
+
+
             Console.WriteLine(this.Parameter);
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
 
-            if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
+            if (!File.Exists(endpath[0]){
+
+                if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
+                {
+                    Console.WriteLine(" Ihr Datei gibt es bereits");
+                }
+
+                else
+                {
+                    File.Move(endpath[0], endpath[1]);
+                    Console.Write("Ihre Datei wurde umbennant");
+
+                }
+            }
+            else
             {
-                Console.WriteLine(" Ihr Pfad gibt es bereits");
+                Program.shell.Exit();
             }
+        }
+
             
-            else {
-                File.Move(endpath[0], endpath[1]);  
-                Console.Write("Ihre Datei wurde verschoben");
-            
-            }
+
             
 
             
