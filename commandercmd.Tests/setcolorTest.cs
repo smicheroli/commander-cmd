@@ -2,7 +2,7 @@
 using commandercmd.console.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ConsoleApplicationTests
+namespace commandercmd.Tests
 {
     [TestClass]
     public class setcolorTest
@@ -12,14 +12,14 @@ namespace ConsoleApplicationTests
         {
             // Arrange
             ConsoleColor expectedColor = ConsoleColor.DarkRed;
-            string setcolor = "ROT";
+            string setcolor = "Schwarz ROT";
             colorCommand command = new colorCommand("color", setcolor);
 
             // Act
             command.Execute();
 
             // Assert
-            Assert.AreEqual(expectedColor, Console.ForegroundColor);
+            Assert.AreEqual(expectedColor, Console.BackgroundColor);
         }
         [TestMethod]
         public void TestValidForegroundColor()
@@ -42,14 +42,14 @@ namespace ConsoleApplicationTests
             // Arrange
             string setcolor = "INVALID_COLOR";
             colorCommand command = new colorCommand("color", setcolor);
-            Console.SetOut(new StringWriter());
+            StringWriter writer = new StringWriter();
+            Console.SetOut(writer);
 
             // Act
             command.Execute();
-            string output = Console.Out.ToString();
 
             // Assert
-            Assert.IsTrue(output.Contains("Invalid color"));
+            Assert.AreEqual(writer.ToString().Trim(),"Invalid color");
         }
     }
 }
