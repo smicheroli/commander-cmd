@@ -18,5 +18,8 @@ namespace commandercmd.FileSystem
             Name = name.Trim();
             Content = content;
         }
+        public File() { 
+            
+        }
     }
 }

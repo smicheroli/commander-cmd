@@ -19,6 +19,7 @@ namespace commandercmd.console
         {
             persistence = new PersistenceService(@$"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}\filesystem.json");
             Drives = persistence.Load();
+            persistence.Save(Drives);
             invoker = new Invoker();
         }
 
