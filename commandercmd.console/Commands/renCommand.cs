@@ -25,7 +25,7 @@ namespace commandercmd.console.Commands
 
                 if (!File.Exists(endpath[0]) && !File.Exists(endpath[1]))
                 {
-                    Console.WriteLine(" Ihr Datei gibt es bereits");
+                    Console.WriteLine(" Ihr Datei gibt es bereits haha");
                     Program.shell.Exit();
                 }
 
