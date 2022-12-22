@@ -25,8 +25,8 @@ namespace ConsoleApplicationTests
         public void TestValidBackgroundColor()
         {
             // Arrange
-            ConsoleColor expectedColor = ConsoleColor.DarkRed;
-            string setcolor = "WEISS ROT";
+            ConsoleColor expectedColor = ConsoleColor.Red;
+            string setcolor = "HELLROT";
             colorCommand command = new colorCommand("color", setcolor);
 
             // Act
