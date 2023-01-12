@@ -6,7 +6,7 @@ namespace commandercmd.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            String Startname = "\"C:\\Users\\feder\\Downloads\\radio.png\";
+            String Startname = "\"C:\\Users\\feder\\Downloads\\radio.png";
 
         }
     }
