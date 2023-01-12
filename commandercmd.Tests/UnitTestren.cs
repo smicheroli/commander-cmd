@@ -1,12 +1,12 @@
 namespace commandercmd.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestren
     {
         [TestMethod]
         public void TestMethod1()
         {
-            String Startname = "\"C:\\Users\\feder\\Downloads\\radio.png\";
+            String Startname = "\"C:\\Users\\feder\\Downloads\\radio.png";
 
         }
     }
