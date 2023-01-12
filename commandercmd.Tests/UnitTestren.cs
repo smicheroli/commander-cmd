@@ -1,7 +1,7 @@
 namespace commandercmd.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestren
     {
         [TestMethod]
         public void TestMethod1()
