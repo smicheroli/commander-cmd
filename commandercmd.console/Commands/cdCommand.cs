@@ -33,11 +33,15 @@ namespace commandercmd.console.Commands
                     {
                         Console.WriteLine("Du hast ins folgende Verzeichnis gewechselt: " + path);
                         Program.shell.currentDirectory = path;
-                        if(Program.shell.prompt == "C:\\")
+                        if(Program.shell.promptChanged == false)
                         {
                             Program.shell.prompt = path;
                         }
                         
+                    }
+                    else
+                    {
+                        Console.WriteLine("Das Laufwerk konnte nicht gefunden werden");
                     }
 
                 }
