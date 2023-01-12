@@ -48,6 +48,10 @@ namespace commandercmd.console
                     command = new cdCommand(commandName, "..");
 
                     break;
+                case "del":
+                    command = new delCommand(commandName, parameter);
+
+                    break;
             }
 
 
