@@ -32,6 +32,10 @@ namespace commandercmd.console
                     command = new renCommand(commandName, parameter);
 
                     break;
+                case "move":
+                    command = new renCommand(commandName, parameter);
+
+                    break;
                 case "ver":
                     command = new versionCommand(commandName, parameter);
 

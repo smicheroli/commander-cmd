@@ -19,15 +19,15 @@ namespace commandercmd.console.Commands
             String startpath = this.Parameter;
             String[] endpath = startpath.Split(' ');
 
-            if (File.Exists(endpath[0]) && !File.Exists(endpath[1]))
+            if (Program.shell.GetDrive(endpath[0]).ExistsFile(endpath[0]) && !Program.shell.GetDrive(endpath[1]).ExistsFile(endpath[1]))
             {
-                File.Move(endpath[0], endpath[1]);
+                Program.shell.GetDrive(endpath[0]).MoveItem(endpath[0], endpath[1]);
                 Console.Write("Ihre Datei wurde umbennant");
             }
 
             else
             {
-                Console.WriteLine(" Ihr Datei gibt es bereits haha");
+                Console.WriteLine(" Ihre Datei gibt es bereits haha");
             }
         }
         

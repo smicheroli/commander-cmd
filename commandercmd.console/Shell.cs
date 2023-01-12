@@ -72,6 +72,9 @@ namespace commandercmd.console
                     case "ren":
 
                         return true;
+                    case "move":
+
+                        return true;
                     case "color":
 
                         return true;
