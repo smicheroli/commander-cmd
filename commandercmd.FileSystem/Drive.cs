@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -38,7 +38,7 @@ namespace commandercmd.FileSystem
                     FileSystemItem fileSystemItem = Content.Where(x => x.Name== firstLevel).FirstOrDefault();
                     if(fileSystemItem.GetType() == typeof(Directory))
                     {
-                        if (spliitedArray.Length > 2)
+                        if (spliitedArray.Length > 3)
                         {
                             String nextPath = "";
                             for (int i = 2; i < spliitedArray.Length; i++)

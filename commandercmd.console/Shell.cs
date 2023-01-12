@@ -82,7 +82,8 @@ namespace commandercmd.console
 
                         return true;
                     case "cd":
-
+                        return true;
+                    case "del":
                         return true;
                     case "cd..":
                         return true;
