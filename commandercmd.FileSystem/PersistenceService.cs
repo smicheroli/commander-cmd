@@ -34,7 +34,12 @@ namespace commandercmd.FileSystem
                 Drive cDrive = new Drive('C');
                 Directory directory1 = new Directory("Pema");
                 directory1.Content.Add(new File("Loris.txt", "Das ist ein Test. Diktaturen verboten"));
+
+
+                directory1.Content.Add(new Directory("Loris"));
                 cDrive.Content.Add(directory1);
+
+
                 Directory directory2 = new Directory("Pema1");
                 cDrive.Content.Add(directory2);
                 Directory directory3 = new Directory("Pema2");

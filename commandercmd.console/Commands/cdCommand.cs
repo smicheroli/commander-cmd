@@ -14,11 +14,46 @@ namespace commandercmd.console.Commands
 
         public override void Execute()
         {
-            String selectedpath = Parameter;
 
-            if(selectedpath != null && selectedpath.Length > 0)
+            String path = Parameter;
+
+            if(path == "")
             {
-                Environment.CurrentDirectory = Path.GetFullPath(selectedpath);
+                Console.WriteLine(Program.shell.currentDirectory + "\n");
+                //Program.shell.currentDirectory;
+            }
+            else if (path != null)
+            {
+                //check if path exists (absolute) 
+
+
+                try
+                {
+                    if (Program.shell.GetDrive(path).ExistsDirectory(path))
+                    {
+                        Console.WriteLine("Du hast ins folgende Verzeichnis gewechselt: " + path);
+                        Program.shell.currentDirectory = path;
+                        if(Program.shell.prompt == "C:\\")
+                        {
+                            Program.shell.prompt = path;
+                        }
+                        
+                    }
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Das Laufwerk konnte nicht gefunden werden");
+                }
+
+                //else check if relative?
+
+
+                //..
+
+
+
+
             }
         }
     }
