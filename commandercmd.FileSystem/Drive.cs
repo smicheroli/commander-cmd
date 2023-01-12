@@ -63,25 +63,34 @@ namespace commandercmd.FileSystem
             {
                 if (path.StartsWith(DriveLetter) && path[1] == ':' && path[2] == '\\')
                 {
-                    String[] spliitedArray = path.Split('\\');
-                    String firstLevel = spliitedArray[1];
+                    String[] splittedArray = path.Split('\\');
+                    String firstLevel = splittedArray[1];
                     FileSystemItem fileSystemItem = Content.Where(x => x.Name == firstLevel).FirstOrDefault();
                     if (fileSystemItem.GetType() == typeof(Directory))
                     {
-                        if(spliitedArray.Length < 2)
+                        if (splittedArray.Length < 3)
                         {
                             return (Directory)fileSystemItem;
                         }
                         else
                         {
                             String nextPath = "";
-                            for (int i = 2; i < spliitedArray.Length; i++)
+                            for (int i = 2; i < splittedArray.Length; i++)
                             {
-                                nextPath += $"\\{spliitedArray[i]}";
+                                if (i == 2)
+                                {
+                                    nextPath += splittedArray[i];
+                                }
+                                else
+                                {
+                                    nextPath += "\\" + splittedArray[i];
+                                }
+
+                                ((Directory)fileSystemItem).GetDirectory(nextPath);
                             }
-                            ((Directory)fileSystemItem).GetDirectory(nextPath);
-                        }
+                        } 
                     }
+                    
                 }
             }
             throw new DirectoryNotFoundException();

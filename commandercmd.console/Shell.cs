@@ -10,16 +10,12 @@ namespace commandercmd.console
 
         public Invoker invoker { get; set; }
 
-        public String currentDirectory { get 
-            {
-                //return Environment.CurrentDirectory;
-                return Drives.First().DriveLetter + ":\\";
-            } 
-        }
+        public String currentDirectory { get; set; }
 
         private PersistenceService persistence;
         public IList<Drive> Drives { get; set; }
         public String prompt;
+        public String promptSign;
 
         public Shell()
         {
@@ -27,7 +23,9 @@ namespace commandercmd.console
             Drives = persistence.Load();
             persistence.Save(Drives);
             invoker = new Invoker();
+            currentDirectory = "C:\\";
             prompt = currentDirectory + ">";
+            
         }
 
         public void Run()
@@ -53,6 +51,8 @@ namespace commandercmd.console
             Console.Write(prompt);
             return Console.ReadLine();
         }
+
+
         private bool ValidateInput(String input)
         {
             String command = input.Split(' ').First();
