@@ -22,10 +22,12 @@ namespace commandercmd.console.Commands.prompt
         {
             if (Parameter.Equals("")){
                 Program.shell.prompt = Program.shell.currentDirectory + ">";
+                Program.shell.promptChanged = false;
             }
             else
             {
                 Program.shell.prompt = Parameter;
+                Program.shell.promptChanged = true;
             }
         }
     }

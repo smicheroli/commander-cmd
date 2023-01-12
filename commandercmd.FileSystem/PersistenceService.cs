@@ -32,17 +32,16 @@ namespace commandercmd.FileSystem
             {
                 files= new List<Drive>();
                 Drive cDrive = new Drive('C');
-                Directory directory1 = new Directory("Pema");
-                directory1.Content.Add(new File("Loris.txt", "Das ist ein Test. Diktaturen verboten"));
+                Directory directory1 = new Directory("Verzeichnis1");
+                directory1.Content.Add(new File("Text.txt", "Das ist ein Test. Note 6 reicht :)"));
+                directory1.Content.Add(new Directory("Verzeichnis1Verzeichnis"));
 
-
-                directory1.Content.Add(new Directory("Loris"));
                 cDrive.Content.Add(directory1);
 
 
-                Directory directory2 = new Directory("Pema1");
+                Directory directory2 = new Directory("Verzeichnis2");
                 cDrive.Content.Add(directory2);
-                Directory directory3 = new Directory("Pema2");
+                Directory directory3 = new Directory("Verzeichnis3");
                 cDrive.Content.Add(directory3);
                 files.Add(cDrive);
             }

@@ -15,7 +15,7 @@ namespace commandercmd.console
         private PersistenceService persistence;
         public IList<Drive> Drives { get; set; }
         public String prompt;
-        public String promptSign;
+        public bool promptChanged;
 
         public Shell()
         {
